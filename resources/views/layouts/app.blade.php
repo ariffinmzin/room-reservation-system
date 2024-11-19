@@ -27,10 +27,23 @@
                 </header>
             @endisset
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <!-- Main Content Layout with Sidebar -->
+                <div class="grid grid-cols-12 gap-4">
+                    <!-- Sidebar Component (e.g., col-2) -->
+                    <x-sidebar />
+
+                    <!-- Main Content (e.g., col-10) -->
+                    <div class="col-span-10 p-4">
+                        <!-- 10-column wide content -->
+                        <div class="bg-white overflow-hidden shadow-sm rounded-box">
+                            <main>
+                                {{ $slot }}
+                            </main>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
