@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\RoomReservationController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -19,5 +20,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('rooms', RoomController::class);
+
+Route::resource('roomreservations', RoomReservationController::class);
 
 require __DIR__.'/auth.php';

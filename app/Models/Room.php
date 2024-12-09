@@ -15,4 +15,10 @@ class Room extends Model
         'photo',
         'capacity',
     ];
+
+    public function reserves(){
+
+        return $this->hasMany(RoomReservation::class, 'room_id');
+        
+    }
 }
