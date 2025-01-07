@@ -3,6 +3,7 @@
     <!-- Sidebar content -->
     @if(auth()->user()->role === 'admin')
         <ul class="menu bg-white rounded-box w-50">
+            <li><a href="{{ route('roomreservations.bookingListForAdmin') }}">Booking List</a></li>
             <li><a href="{{ route('rooms.index') }}">Room List</a></li>
             <li><a href="{{ route('rooms.create') }}">Create Room</a></li>
             <li><a href="{{ route('rooms.index', ['action' => 'update']) }}">Update Room</a></li>

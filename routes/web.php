@@ -19,8 +19,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/roomreservations/bookingList', [RoomReservationController::class, 'bookingListForAdmin'])->name('roomreservations.bookingListForAdmin');
+
+Route::put('/roomreservations/{id}/status', [RoomReservationController::class, 'updateStatus'])->name('roomreservations.updateStatus');
+
 Route::resource('rooms', RoomController::class);
 
 Route::resource('roomreservations', RoomReservationController::class);
+
+
+
 
 require __DIR__.'/auth.php';

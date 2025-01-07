@@ -170,4 +170,25 @@ class RoomReservationController extends Controller
 
         return redirect()->back()->with('message', 'Reservation deleted successfully');
     }
+
+    public function bookingListForAdmin(){
+
+        $roomReservations = RoomReservation::paginate(10);
+
+        return view('roomreservations.bookingListForAdmin', compact('roomReservations'));
+
+    }
+
+    public function updateStatus(Request $request, $id)
+    {
+        $request->validate([
+            'status' => 'required|in:pending,approved,rejected',
+        ]);
+
+        $roomReservation = RoomReservation::findOrFail($id);
+        $roomReservation->status = $request->input('status');
+        $roomReservation->save();
+
+        return redirect()->back()->with('message', 'Reservation status updated successfully');
+    }
 }
