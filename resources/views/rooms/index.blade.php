@@ -27,7 +27,7 @@
                       <!-- head -->
                       <thead>
                         <tr>
-                          <th>No</th>
+                          <th>Nombor</th>
                           <th>Name</th>
                           <th>Photo</th>
                           <th>Capacity</th>
